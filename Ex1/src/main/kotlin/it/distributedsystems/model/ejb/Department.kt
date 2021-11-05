@@ -7,11 +7,11 @@ import javax.persistence.*
 class Department(
     @Id
     @GeneratedValue
-    var id : Long,
+    var id : Long? = null,
 
     var name : String,
 
-    @OneToMany(mappedBy="department",cascade=[CascadeType.PERSIST])
-    var employees: List<Employee> = mutableListOf<Employee>()
+    @OneToMany(mappedBy="department",cascade=[CascadeType.PERSIST], targetEntity = Employee::class)
+    var employees: List<Employee> = mutableListOf()
 ) {
 }

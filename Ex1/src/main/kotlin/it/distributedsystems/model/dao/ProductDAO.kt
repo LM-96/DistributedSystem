@@ -2,9 +2,9 @@ package it.distributedsystems.model.dao
 
 interface ProductDAO {
 
-    fun insertProduct(product : Product)
-    fun removeProductByNumber(productNumber : Int)
-    fun removeProductById(id : Int)
+    fun insertProduct(product : Product) : Int
+    fun removeProductByNumber(productNumber : Int) : Int
+    fun removeProductById(id : Int) : Int
     fun findProductByNumber(productNumber: Int) : Product?
     fun findProductById(id: Int) : Product?
     fun getAllProducts() : List<Product>

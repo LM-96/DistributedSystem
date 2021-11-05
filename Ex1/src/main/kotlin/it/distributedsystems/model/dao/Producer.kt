@@ -14,7 +14,8 @@ class Producer(
     @OneToMany(
         cascade=[CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH],
         fetch=FetchType.LAZY,
-        mappedBy = "producer"
+        mappedBy = "producer",
+        targetEntity = Product::class
     )
     var products : Set<Product>
 ) {

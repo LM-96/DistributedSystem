@@ -7,7 +7,7 @@ interface PurchaseDAO {
     fun findPurchaseByNumber(purchaseNumber : Int) : Purchase?
     fun findPurchaseById(id : Int) : Purchase?
     fun getAllPurchase() : List<Purchase>
-    fun findAllPurchaseByCustomer(customer: Customer) : List<Purchase>
-    fun findAllPurchaseByProduct(product : Product) : List<Purchase>
+    fun findAllPurchasesByCustomer(customer: Customer): List<Purchase>
+    fun findAllPurchasesByProduct(product: Product?): List<Purchase>
 
 }

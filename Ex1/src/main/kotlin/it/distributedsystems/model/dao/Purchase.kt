@@ -21,7 +21,8 @@ class Purchase(
     @OneToMany(
         cascade=[CascadeType.MERGE,CascadeType.PERSIST,CascadeType.REFRESH],
         fetch=FetchType.LAZY,
-        mappedBy = "purchase"
+        mappedBy = "purchase",
+        targetEntity = Product::class
     )
     var products : Set<Product>
 ) : Serializable {

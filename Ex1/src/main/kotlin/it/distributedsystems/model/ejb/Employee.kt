@@ -7,16 +7,16 @@ import javax.persistence.*
 class Employee(
     @Id
     @GeneratedValue
-    var id : Long,
+    var id : Long? = null,
 
     var name : String,
 
     @ManyToOne
-    var department: Department
+    var department: Department? = null
 ) {
 
     override fun toString(): String {
-        return "Employee [id=$id, name=$name, department=${department.name}]"
+        return "Employee [id=$id, name=$name, department=${department?.name}]"
     }
 
 }

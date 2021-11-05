@@ -1,4 +1,4 @@
-package it.distributedsystems.model.web
+package it.distributedsystems.web
 
 import it.distributedsystems.model.ejb.HelloBean
 import java.io.IOException

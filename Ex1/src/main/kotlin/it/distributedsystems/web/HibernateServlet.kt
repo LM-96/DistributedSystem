@@ -1,6 +1,6 @@
 package it.distributedsystems.web
 
-import it.distributedsystems.model.util.HibernateSessionFactory.sessionFactory
+import it.distributedsystems.util.HibernateSessionFactory.sessionFactory
 import javax.servlet.annotation.WebServlet
 import javax.servlet.http.HttpServlet
 import kotlin.Throws

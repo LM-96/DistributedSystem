@@ -85,9 +85,9 @@ Se il deploy è andato a buon fine, nella cartella`C:\Windfly\standalone\deploym
 
 *N.B.: C'è la possibilità che compaiano delle eccezioni SQL su degli `alter table` o `already exists`: queste eccezioni possono essere ignorate e sono dovute a precedenti esecuzioni e al fatto che lo start kit è impostato in modo tale da creare automaticamente le cartelle nel DB.
 Si veda la proprietà
-
 ```xml
 <property name="hibernate.hbm2ddl.auto" value="create"/>```
+
 presente nel file `src/main/application/META-INF/persistence.xml`, moficandola o rimuovendola nel caso si voglia gestire manualmente la creazione del database.
 
 ### **8. Deploy sincronizzato con Eclipse**

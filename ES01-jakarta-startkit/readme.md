@@ -58,7 +58,7 @@ In caso di errori durante il *build* di Eclipse, fare tasto destro sul progetto,
 
 Se persistono errori sul *CDI*, rimuovere la spunta in `Properties -> CDI Settings -> CDI support`.
 
-** Ricordarsi di aggiornare i file `src/main/application/META-INF/persistence.xml` e `src/main/resources/hibernate.cfg.xml` con URL, username e password corretti in relazione alle impostazioni di MySQL Server **
+__ Ricordarsi di aggiornare i file `src/main/application/META-INF/persistence.xml` e `src/main/resources/hibernate.cfg.xml` con URL, username e password corretti in relazione alle impostazioni di MySQL Server __
 
 Il kit è configurato in modo tale che le tabelle siano automaticamente generate nel database *test*: se si verificano errori di tipo `database 'test' not found` creare manualmente il database (aprire una shell SQL e dare il comando `create database test`). In alternativa utilizzare software di utilità per database come [DBeaver](https://dbeaver.io/) per gestire il DBMS.
 

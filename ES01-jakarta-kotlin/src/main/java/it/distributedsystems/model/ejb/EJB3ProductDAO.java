@@ -2,7 +2,6 @@ package it.distributedsystems.model.ejb;
 
 //import it.distributedsystems.model.logging.OperationLogger;
 import it.distributedsystems.model.dao.*;
-import it.distributedsystems.util.GeneralUtils;
 import jakarta.ejb.Local;
 import jakarta.ejb.Stateless;
 import jakarta.ejb.TransactionAttribute;

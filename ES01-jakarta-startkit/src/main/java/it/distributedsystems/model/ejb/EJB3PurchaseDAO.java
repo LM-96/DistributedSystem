@@ -111,8 +111,8 @@ import java.util.Set;
     public List<Purchase> findAllPurchasesByCustomer(Customer customer) {
         //Non è stato necessario usare una fetch join (nonostante Purchase.customer fosse mappato LAZY)
         //perché gli id delle entità LAZY collegate vengono comunque mantenuti e sono accessibili
-        return GeneralUtils.withNullAsEmptyList(em.createQuery("FROM Purchase p WHERE :customerId = p.customer.id").
-                setParameter("customerId", customer.getId()).getResultList());
+        return em.createQuery("FROM Purchase p WHERE :customerId = p.customer.id").
+                setParameter("customerId", customer.getId()).getResultList();
     }
 
     @Override
@@ -120,11 +120,11 @@ import java.util.Set;
     public List<Purchase> findAllPurchasesByProduct(Product product) {
         if (product != null){
             em.merge(product); // riattacco il product al contesto di persistenza con una merge
-            return GeneralUtils.withNullAsEmptyList( em.createQuery("SELECT DISTINCT (p) FROM Purchase p JOIN FETCH p.products JOIN FETCH p.customer WHERE :product MEMBER OF p.products").
-                    setParameter("product", product).getResultList());
+            return em.createQuery("SELECT DISTINCT (p) FROM Purchase p JOIN FETCH p.products JOIN FETCH p.customer WHERE :product MEMBER OF p.products").
+                    setParameter("product", product).getResultList();
         }
         else
-            return GeneralUtils.withNullAsEmptyList(em.createQuery("SELECT DISTINCT (p) FROM Purchase p JOIN FETCH p.products JOIN FETCH p.customer").getResultList());
+            return em.createQuery("SELECT DISTINCT (p) FROM Purchase p JOIN FETCH p.products JOIN FETCH p.customer").getResultList();
 
     }
 

@@ -77,6 +77,6 @@ public class EJB3ProducerDAO implements ProducerDAO {
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
     public List<Producer> getAllProducers() {
-        return GeneralUtils.withNullAsEmptyList(em.createQuery("FROM Producer").getResultList());
+        return em.createQuery("FROM Producer").getResultList();
     }
 }

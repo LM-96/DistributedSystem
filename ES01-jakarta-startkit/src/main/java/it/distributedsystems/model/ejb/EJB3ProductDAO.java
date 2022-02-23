@@ -103,8 +103,8 @@ public class EJB3ProductDAO implements ProductDAO {
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
     public List<Product> getAllProductsByPurchase(Purchase purchase) {
         // riattacco il product al contesto di persistenza con una merge
-        return GeneralUtils.withNullAsEmptyList(em.createQuery("FROM Product p WHERE :purchaseId = p.purchase.id").
-                setParameter("purchaseId", purchase.getId()).getResultList());
+        return em.createQuery("FROM Product p WHERE :purchaseId = p.purchase.id").
+                setParameter("purchaseId", purchase.getId()).getResultList();
     }
 }
 

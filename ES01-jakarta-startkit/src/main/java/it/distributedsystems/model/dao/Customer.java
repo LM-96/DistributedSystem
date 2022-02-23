@@ -15,7 +15,6 @@ import jakarta.persistence.OneToMany;
 public class Customer implements Serializable {
 
     private static final long serialVersionUID = 318274891481L;
-
     protected int id;
     protected String name;
     protected Set<Purchase> purchases;

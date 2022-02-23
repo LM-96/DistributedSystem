@@ -73,6 +73,6 @@ public class EJB3CustomerDAO implements CustomerDAO {
     @Override
     @TransactionAttribute(TransactionAttributeType.REQUIRES_NEW)
     public List<Customer> getAllCustomers() {
-        return GeneralUtils.withNullAsEmptyList(em.createQuery("FROM Customer").getResultList());
+        return em.createQuery("FROM Customer").getResultList();
     }
 }

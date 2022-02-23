@@ -90,7 +90,7 @@ Si veda la proprietà
 <property name="hibernate.hbm2ddl.auto" value="create"/>```
 presente nel file `src/main/application/META-INF/persistence.xml`, moficandola o rimuovendola nel caso si voglia gestire manualmente la creazione del database.
 
-#### **8. Deploy sincronizzato con Eclipse**
+### **8. Deploy sincronizzato con Eclipse**
 
 In alternativa al punto precedente, è possibile utilizzare direttamente Eclipse per fare deploy automatico e sincronizzato dell'applicazione, agganciando *Wildfly* ad Eclipse, procedendo seguendo [questa guida](https://www.baeldung.com/eclipse-wildfly-configuration).
 

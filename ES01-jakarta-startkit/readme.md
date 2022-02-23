@@ -19,33 +19,33 @@ Il codice originale è stato aggiornato in modo da funzionare con [JEE9](https:/
 N.B: si possono utilizzare anche altri IDE (es. *Intellij*, *NetBeans*), tuttavia si potrebbe non avere supporto per le *JSP*.
 
 ## Guida all'avvio dello Start Kit
-**1. Installare Java**
+#### **1. Installare Java**
 
 Scaricare ed installare Java 11 ed [impostarla come default](https://www.java.com/it/download/help/path.html).
 
-**2. Installare Gradle**
+#### **2. Installare Gradle**
 
 Scaricare ed installare l'ultima versione di Gradle.
 Una volta aperto il link per il download, premere su [Installing manually](https://gradle.org/install/#manually) e seguire la guida.
 
-**3. Installare Eclipse**
+#### **3. Installare Eclipse**
 
 Scaricare l'installer di eclipse dal [link](https://www.eclipse.org/downloads/download.php?file=/oomph/epp/2021-12/R/eclipse-inst-jre-win64.exe) ed avviarlo. Scegliere la versione *Eclipse IDE for Enterprise Java and Web Developers*.
 In alternativa è possibile scaricare direttamente lo zip della versione per sviluppatori enterprise direttamente a questo [link](https://www.eclipse.org/downloads/packages/) e poi scompattarla per usare Eclipse senza installarlo.
 *Non occorre aggiungere il plugin Gradle: è già incluso!*
 
-**4. Scaricare e configurare WildFly con JEE9**
+#### **4. Scaricare e configurare WildFly con JEE9**
 
 Scaricare e decomprimere WildFly in `C:\Wildfly` o in un percorso a scelta e modificare la variabile `wildfly_home` presente nel file `build.gradle` di conseguenza.
 Per avviare o configurare WildFly è sufficente andare nella cartella `C:\Wildfly\bin` ed avviare un terminale:
 - digitare `add-user.bat` (Windows) o `add-user.sh` (Linux/Mac) e seguire le istruzioni per aggiungere un eventuale utente con ruolo di *Manager* in modo da poter gestire *WildFly* da console;
 - digitare `standalone.bat` (Windows) o `standalone.sh` (Linux/Mac) per avviare *WildFly*.
 
-**5. Installare MySql Community Edition**
+#### **5. Installare MySql Community Edition**
 
 Scaricare ed eseguire l'installer di MySql Community Edition seguendo le istruzioni ed installando *MySQL Server* come servizio di sistema con avvio automatico per evitare di dover avviare manualmente.
 
-**6. Importazione dello Start Kit in Eclipse**
+#### **6. Importazione dello Start Kit in Eclipse**
 
 Scaricare ed installare Eclipse per sviluppatori JEE.
 Aprire l'IDE e premere `File -> Import -> Gradle -> Existing Gradle Project`: il progetto verrà importato in Eclipse (si possono tranquillamente ignorare eventuali errori `'Auto share git project'`).
@@ -62,7 +62,7 @@ Se persistono errori sul *CDI*, rimuovere la spunta in `Properties -> CDI Settin
 
 Il kit è configurato in modo tale che le tabelle siano automaticamente generate nel database *test*: se si verificano errori di tipo `database 'test' not found` creare manualmente il database (aprire una shell SQL e dare il comando `create database test`). In alternativa utilizzare software di utilità per database come [DBeaver](https://dbeaver.io/) per gestire il DBMS.
 
-**7. Deploy e avvio dell'applicazione**
+#### **7. Deploy e avvio dell'applicazione**
 
 Se *WildFly* è stato correttamente avviato, allora è possibile accere alla console di gestione all'url:
 
@@ -90,7 +90,7 @@ Si veda la proprietà
 <property name="hibernate.hbm2ddl.auto" value="create"/>```
 presente nel file `src/main/application/META-INF/persistence.xml`, moficandola o rimuovendola nel caso si voglia gestire manualmente la creazione del database.
 
-**8. Deploy sincronizzato con Eclipse**
+#### **8. Deploy sincronizzato con Eclipse**
 
 In alternativa al punto precedente, è possibile utilizzare direttamente Eclipse per fare deploy automatico e sincronizzato dell'applicazione, agganciando *Wildfly* ad Eclipse, procedendo seguendo [questa guida](https://www.baeldung.com/eclipse-wildfly-configuration).
 
